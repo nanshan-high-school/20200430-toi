@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int number[2];
+	int unknown;
+	
+	for (int i = 0; i < 2; i++) {
+		cin >> number[i];
+	}
+
+	if (number[0] == number[1]) {
+		number[1] -= 3;
+
+		if (number[1] > 3) {
+			cout << "3+" <<  number[1] << "=" << number[0];
+		} else {
+			cout << number[1] << "+3=" << number[0];
+		}
+	} else {
+		unknown = number[0] - number[1];
+
+		if (unknown > number[1]) {
+			cout << number[1] << "+" << unknown << "=" << number[0];
+		} else {
+			cout << unknown << "+" << number[1] << "=" << number[0];
+		}	
+	}
+}
