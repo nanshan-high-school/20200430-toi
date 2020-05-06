@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int slime[2];
+	int total;
+	int day = 0;
+
+	for (int i = 0; i < 2; i++) {
+		cin >> slime[i];
+	}
+
+	total = slime[0] + slime[1];
+
+	while (total != slime[0]) {
+		total /= 2;
+
+		day += 1;
+	}
+
+	cout << day;
+}

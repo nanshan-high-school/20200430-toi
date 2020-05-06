@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	string ID[3];
+	int biggest[2];
+	int scan = 0;
+	int biggestplace;
+	int total;
+
+	cin >> ID[0];
+
+	ID[1] = ID[0];
+	ID[2] = ID[0];
+
+	for (int j = 0; j < 2; j++) {
+		for (int i = 0; i < 9; i++) {
+			if (scan < (ID[j][i] - '0')) {
+				scan = ID[j][i] - '0';
+
+				biggestplace = i;
+			}
+		}
+		ID[1][biggestplace] = 0;
+
+		biggest[j] = scan;
+		
+		scan = 0;
+	}
+
+	total = (biggest[0] * biggest[0]) + (biggest[1] * biggest[1]);
+
+	if (total < 100) {
+		if (total == ((ID[2][7] - '0') * 10) + (
+			ID[2][8] - '0')) {
+			cout << "Good Morning !";
+		} else {
+			cout << "SPY !";
+		}
+	} else if (total == ((ID[2][6] - '0') * 100) + ((ID[2][7] - '0') * 10) + (ID[2][8] - '0')) {
+		cout << "Good Morning !";
+	} else {
+		cout << "SPY !";
+	}
+}
